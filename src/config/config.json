@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "database_development",
+    "password": "Vicky@123@",
+    "database": "flightsAnsSearch_database",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
