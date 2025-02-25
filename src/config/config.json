@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Vicky@123@",
-    "database": "flightsAnsSearch_database",
+    "database": "dlightsanssearch_database",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
