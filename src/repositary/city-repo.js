@@ -1,25 +1,50 @@
-const {City}=require('../models');
+const City=require('../models/City');
 
 class cityRepositary{
     async createCity({name}){
-        try{
+        try {
             const city=await City.create({name});
             return city;
-        }
-        catch(err){
-            console.error("Error creating city:", err);
-            throw {err};
+        } catch (error) {
+            console.log("something went wrong in city repo");
+            throw(error);
         }
     }
-    async deleteCity({id}){
-        try{
+
+    async deleteCity({cityId}){
+        try {
             await City.destroy({
                 where:{
-                    id:id
+                    id:cityId
                 }
             });
-        }catch(err){
-            throw(err);
+        } catch (error) {
+            console.log('something went wrong in city repo');
+            throw(error);
+        }
+    }
+    
+    async updateCity({cityId,data}){
+        try {
+            const city=await City.update(data,{
+                where:{
+                    id:cityId
+                }
+            });
+            return city;
+        } catch (error) {
+            console.log('something went wrong in city repo');
+            throw(error);
+        }
+    }
+    
+    async getCity({cityId}){
+        try {
+            const city=await City.findByPk(cityId);
+            return city;
+        } catch (error) {
+            console.log('something went wrong in city repo');
+            throw(error);
         }
     }
 }
